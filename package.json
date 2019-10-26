@@ -1,0 +1,25 @@
+{
+  "name": "br_ex_191026",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saniok333/BR_Ex_191026.git"
+  },
+  "author": "Alex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saniok333/BR_Ex_191026/issues"
+  },
+  "homepage": "https://github.com/saniok333/BR_Ex_191026#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cssbeautify": "^2.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}

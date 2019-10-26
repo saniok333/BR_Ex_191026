@@ -1,0 +1,853 @@
+@import "./_normalize.scss";
+@import "./mixins";
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  box-sizing: border-box;
+  > header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    @include set-bgr("../img/header-bgr.jpg", left center);
+    > div#header-cont {
+      width: 100%;
+      flex-grow: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      > div#header-text {
+        padding-top: 25vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        > h1 {
+          @include set-txt(
+            #ffffff,
+            "Josefin Sans",
+            38px,
+            700,
+            0,
+            uppercase,
+            4.8px
+          );
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing)
+        }
+        > p {
+          @include set-txt(#ffffff, "Josefin Sans", 16px, 400, 0, null, 6.82px);
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing)
+        }
+      }
+      > form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        > input {
+          width: 80%;
+          height: 6vh;
+          align-self: center;
+          border: none;
+          outline: none;
+          margin-bottom: 3vh;
+          @include set-txt(null, "Josefin Sans", 13px, 400, 26px, null, 2.8px);
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+          text-align: center;
+          &::placeholder {
+            color: #999999;
+          }
+        }
+        > button {
+          width: 80%;
+          height: 6vh;
+          align-self: center;
+          border: none;
+          outline: none;
+          background-color: #5474fd;
+          color: #ffffff;
+          > span {
+            display: inline-block;
+            @include set-txt(null, Aleo, 14px, 400, 26px, uppercase, 1.4px);
+            //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+            margin-right: 0.3vh;
+            padding-top: 1px;
+          }
+          > div#searh-btn-img {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0.3vh;
+            margin-top: 0.25vh;
+            > img {
+              width: 2.75vh;
+            }
+          }
+          &:hover {
+            background-color: darken(#5474fd, 10%);
+          }
+          &:active {
+            background-color: lighten(#5474fd, 10%);
+          }
+        }
+      }
+      > div#scroll {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        > p {
+          @include set-txt(#ffffff, "Josefin Sans", 14px, 400, 0, null, 2.8px);
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+        }
+        > a {
+          align-self: center;
+          > img {
+            height: 2vh;
+          }
+        }
+      }
+      > menu {
+        margin: 0;
+        padding: 0;
+        background-color: #5474fd;
+        height: 8vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        > div#logo {
+          padding-left: 16vw;
+          > a {
+            @include set-txt(
+              #ffffff,
+              "Josefin Sans",
+              24px,
+              700,
+              26px,
+              uppercase,
+              2.4px
+            );
+            //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+            text-decoration: none;
+          }
+        }
+        > input#menu-checkbox {
+          display: none;
+          &:checked + nav[role="navigation"] > label.toggle-button:after {
+            content: attr(data-close);
+          }
+          &:checked + nav[role="navigation"] > ul.main-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0vw;
+            bottom: 8vh;
+            height: 92vh;
+            width: 100vw;
+            background-color: rgba(35, 53, 119, 0.95);
+          }
+        }
+        > nav {
+          padding-right: 4vw;
+          @include set-txt(#ffffff, Aleo, 24px, 400, 26px, uppercase, null);
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+          > label.toggle-button {
+            cursor: pointer;
+            &:after {
+              content: attr(data-open);
+              font-size: 26px;
+            }
+          }
+          > ul.main-menu {
+            display: none;
+            padding: 0;
+            margin: 0;
+            > li {
+              list-style-type: none;
+              margin: 5% 0;
+              > a {
+                color: #ffffff;
+                text-decoration: none;
+                &:hover {
+                  color: #00a2ff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  > div#wcu {
+    @include set-bgr("../img/wcu-bgr.jpg", left center);
+    > div#wcu-cont {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      > div#wcu-text {
+        width: 80vw;
+        padding-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        > h2 {
+          margin-top: 0;
+
+          @include set-txt(#ffffff, Aleo, 26px, 400, 26px, null, null);
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+        }
+        > p {
+          @include set-txt(
+            #e8e8e8,
+            "Josefin Sans",
+            12px,
+            400,
+            16px,
+            null,
+            1.6px
+          );
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+        }
+        > div {
+          padding: 4vh 0;
+          > a {
+            width: 80vw;
+            height: 6vh;
+            display: table-cell;
+            background-color: #5474fd;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+
+            @include set-txt(#ffffff, Aleo, 16px, 400, 26px, uppercase, 1.2px);
+            //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+            &:hover {
+              background-color: darken(#5474fd, 10%);
+            }
+            &:active {
+              background-color: lighten(#5474fd, 10%);
+            }
+          }
+        }
+      }
+      > div#wcu-imgs {
+        padding: 2vh 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        > div#wcu-img_1 {
+          padding: 0.5vh 0;
+          img {
+            width: 80vw;
+          }
+        }
+        > div#wcu-img_2 {
+          img {
+            width: 80vw;
+          }
+        }
+      }
+    }
+  }
+  > div#hiw {
+    background-color: #333333;
+    padding: 5vh 0 8vh;
+    > div#hiw-cont {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      > div#hiw-img {
+        > img {
+          width: 57vw;
+        }
+      }
+      > div#hiw-icons {
+        margin-top: -5vw;
+        display: flex;
+        justify-content: space-between;
+        width: 80vw;
+        > div.ico {
+          > a {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            > img {
+              width: 12vw;
+            }
+            > p {
+              margin: 1vh 0 0 0;
+
+              @include set-txt(#e8e8e8, Aleo, 16px, 400, 26px, null, null);
+              //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+            }
+            &:hover {
+              > p {
+                color: #5474fd;
+              }
+            }
+            &:active {
+              > p {
+                color: #00a2ff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  > div#gr-1 {
+    @include set-bgr("../img/gr-1-bgr.jpg", left center);
+    > div#gr-1-cont {
+      padding: 5vh 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      > div.wind {
+        width: 80vw;
+        padding-top: 3vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(35, 35, 35, 0.9);
+        > h3 {
+          margin: 0;
+          @include set-txt(
+            #e8e8e8,
+            "Josefin Sans",
+            20px,
+            400,
+            26px,
+            null,
+            1.5px
+          );
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+        }
+        > h2 {
+          @include set-txt(
+            #ffffff,
+            "Josefin Sans",
+            20px,
+            400,
+            26px,
+            uppercase,
+            null
+          );
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+          margin-bottom: 0;
+        }
+        > p {
+          @include set-txt(
+            #e8e8e8,
+            "Josefin Sans",
+            14px,
+            400,
+            22px,
+            null,
+            null
+          );
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+          width: 70vw;
+          text-align: center;
+        }
+        > div {
+          padding: 4vh 0;
+          > a {
+            width: 70vw;
+            height: 6vh;
+            display: table-cell;
+            background-color: #5474fd;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+
+            @include set-txt(#ffffff, Aleo, 16px, 400, 26px, uppercase, 1.2px);
+            //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+            &:hover {
+              background-color: darken(#5474fd, 10%);
+            }
+            &:active {
+              background-color: lighten(#5474fd, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+  > div#gr-2 {
+    @include set-bgr("../img/gr-2-bgr.jpg", left center);
+    > div#gr-2-cont {
+      padding: 5vh 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      > div.wind {
+        width: 80vw;
+        padding-top: 3vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(35, 35, 35, 0.9);
+        > h3 {
+          margin: 0;
+          @include set-txt(
+            #e8e8e8,
+            "Josefin Sans",
+            20px,
+            400,
+            26px,
+            null,
+            1.5px
+          );
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+        }
+        > h2 {
+          @include set-txt(
+            #ffffff,
+            "Josefin Sans",
+            20px,
+            400,
+            26px,
+            uppercase,
+            null
+          );
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+          margin-bottom: 0;
+        }
+        > p {
+          @include set-txt(
+            #e8e8e8,
+            "Josefin Sans",
+            14px,
+            400,
+            22px,
+            null,
+            null
+          );
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+          width: 70vw;
+          text-align: center;
+        }
+        > div {
+          padding: 4vh 0;
+          > a {
+            width: 70vw;
+            height: 6vh;
+            display: table-cell;
+            background-color: #5474fd;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+
+            @include set-txt(#ffffff, Aleo, 16px, 400, 26px, uppercase, 1.2px);
+            //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+            &:hover {
+              background-color: darken(#5474fd, 10%);
+            }
+            &:active {
+              background-color: lighten(#5474fd, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+  > div#test {
+    @include set-bgr("../img/test-bgr.jpg", left center);
+    > div#test-cont {
+      padding: 5vh 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      > h2 {
+        margin: 0 0 4vh 0;
+        @include set-txt(#ffffff, Aleo, 26px, 400, 26px, null, null);
+        //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+      }
+      > div#test-imgtext {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        > div#test-img {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          > img {
+            width: 80vw;
+          }
+        }
+        > div#test-text {
+          width: 80vw;
+          background-color: #2b2d2d;
+          > h3 {
+            padding-left: 5vw;
+            @include set-txt(
+              #fefefe,
+              "Josefin Sans",
+              18px,
+              400,
+              26px,
+              uppercase,
+              null
+            );
+            //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+          }
+          > p {
+            padding-left: 5vw;
+            width: 70vw;
+            @include set-txt(
+              #e8e8e8,
+              "Josefin Sans",
+              14px,
+              400,
+              22px,
+              null,
+              null
+            );
+            //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+            > i {
+              margin-top: -1.8vh;
+              color: #5474fd;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+  > footer {
+    height: 8vh;
+    background-color: #232323;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > div#foot-cont {
+      > div#foot-logo {
+        display: none;
+        > a {
+        }
+      }
+      > p {
+        display: none;
+      }
+      div#foot-icons {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        > div {
+          > a {
+            color: #e8e8e8;
+            font-size: 24px;
+            > i {
+            }
+            &:hover {
+              color: #5474fd;
+            }
+            &:active {
+              color: #00a2ff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    > header {
+      background-position: center;
+      > div#header-cont {
+        > div#header-text {
+          padding-top: 30vh;
+          > h1 {
+            font-size: 48px;
+            margin-bottom: 3vh;
+          }
+          > p {
+            font-size: 22px;
+          }
+        }
+        > form {
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          width: 50%;
+          min-width: 465px;
+          align-self: center;
+          > input {
+            width: 75%;
+            font-size: 14px;
+            height: 5vh;
+            margin-bottom: 0;
+            border: 2px solid #fff;
+          }
+          > button {
+            box-sizing: content-box;
+            width: 25%;
+            height: 5vh;
+            border: 2px solid #fff;
+            > span {
+              padding-left: 2vw;
+            }
+          }
+        }
+        > div#scroll {
+          > p {
+          }
+          > a {
+            > img {
+            }
+          }
+        }
+        > menu {
+          > div#logo {
+            padding-left: 10vw;
+            > a {
+            }
+          }
+          > nav {
+            flex-grow: 1;
+            margin-left: 6vw;
+            padding-right: 2vw;
+            font-size: 14px;
+            > label.toggle-button {
+              display: none;
+            }
+            > ul.main-menu {
+              display: flex;
+              justify-content: space-between;
+              > li {
+                text-align: center;
+                display: inline-block;
+                margin: 0;
+                margin-left: 2vw;
+              }
+            }
+          }
+        }
+      }
+    }
+    > div#wcu {
+      background-position: left center;
+      display: flex;
+      justify-content: center;
+      padding: 15.8vh 0;
+      > div#wcu-cont {
+        width: 80vw;
+        flex-direction: row;
+        align-items: flex-end;
+        > div#wcu-text {
+          width: 37vw;
+          align-items: flex-start;
+          > h2 {
+            font-size: 36px;
+          }
+          > p {
+            font-size: 16px;
+            line-height: 26px;
+          }
+          > div {
+            padding: 4vh 0 0 0;
+            > a {
+              width: 20vw;
+            }
+          }
+        }
+        > div#wcu-imgs {
+          width: 40vw;
+          padding: 0;
+          > div#wcu-img_1 {
+            align-self: flex-start;
+
+            img {
+              width: 100%;
+            }
+          }
+          > div#wcu-img_2 {
+            align-self: flex-end;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    > div#hiw {
+      > div#hiw-cont {
+        > div#hiw-img {
+          > img {
+          }
+        }
+        > div#hiw-icons {
+          > div.ico {
+            > a {
+              > img {
+                width: 8vw;
+              }
+              > p {
+                font-size: 34px;
+              }
+            }
+          }
+        }
+      }
+    }
+    > div#gr-1 {
+      > div#gr-1-cont {
+        padding: 30vh 0 15vh 15.5vw;
+        flex-direction: row;
+        justify-content: flex-start;
+        > div.wind {
+          width: 30vw;
+          min-width: 450px;
+          padding: 8vh 4vw 2vh;
+          align-items: flex-start;
+          > h3 {
+            text-align: left;
+          }
+          > h2 {
+            text-align: left;
+          }
+          > p {
+            width: 30vw;
+            min-width: 450px;
+            font-size: 16px;
+            line-height: 26px;
+            text-align: left;
+          }
+          > div {
+            > a {
+              width: 20vw;
+            }
+          }
+        }
+      }
+    }
+    > div#gr-2 {
+      > div#gr-2-cont {
+        padding: 30vh 15.5vw 15vh 0;
+        flex-direction: row;
+        justify-content: flex-end;
+        > div.wind {
+          width: 30vw;
+          min-width: 450px;
+          padding: 8vh 4vw 2vh;
+          align-items: flex-start;
+          > h3 {
+            text-align: left;
+          }
+          > h2 {
+            text-align: left;
+          }
+          > p {
+            width: 30vw;
+            min-width: 450px;
+            font-size: 16px;
+            line-height: 26px;
+            text-align: left;
+          }
+          > div {
+            > a {
+              width: 20vw;
+            }
+          }
+        }
+      }
+    }
+    > div#test {
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      > div#test-cont {
+        justify-content: space-evenly;
+        > h2 {
+          font-size: 36px;
+        }
+        > div#test-imgtext {
+          min-width: 723px;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          background-color: #2b2d2d;
+          > div#test-img {
+            > img {
+              width: 35vw;
+              min-height: 274px;
+              min-width: 323px;
+            }
+          }
+          > div#test-text {
+            width: 45vw;
+            > h3 {
+              padding-left: 3vw;
+            }
+            > p {
+              padding-left: 3vw;
+              width: 40vw;
+              > i {
+              }
+            }
+          }
+        }
+      }
+    }
+    > footer {
+      height: 30vh;
+      justify-content: flex-end;
+      padding-bottom: 50px;
+      > div#foot-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > div#foot-logo {
+          display: inline-block;
+          > a {
+            text-decoration: none;
+            @include set-txt(
+              #ffffff,
+              "Josefin Sans",
+              24px,
+              700,
+              26px,
+              uppercase,
+              3.36px
+            );
+            //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+          }
+        }
+        > p {
+          display: inline-block;
+          @include set-txt(
+            #ffffff,
+            "Josefin Sans",
+            16px,
+            400,
+            26px,
+            null,
+            1.6px
+          );
+          //       set-txt($color, $family, $size, $weight, $height, $transform, $spacing
+          margin-top: 0;
+        }
+        div#foot-icons {
+          justify-content: space-between;
+          width: 190px;
+        }
+      }
+    }
+  }
+}
